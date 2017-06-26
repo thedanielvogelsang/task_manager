@@ -25,7 +25,7 @@ class Task
 
   def self.find(id)
     database = self.database
-    task = database.execute("SELECT * FROM tasks WHERE id = ?", id).first
+    task = database.execute("SELECT * FROM tasks WHERE id = ?", id.to_i).first
     Task.new(task)
   end
 
